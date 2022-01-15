@@ -151,13 +151,11 @@ function draw() {
         touches=[]
       }
     }
-     if ("modo==jogando"){
-    if (keyDown("space")||touches.length>0){
-            
-      if (trex.y==374.5){
+     if (modo=="jogando"){
+    if (touches.length>0){
         trex.velocityY = -12
         pulo.play ()
-        touches=[]}
+        touches=[]
     } console.log(trex.y)
     trex.velocityY = trex.velocityY +0.6                             
      ground.velocityX = -(3+score/100)
@@ -183,7 +181,7 @@ function draw() {
     
      F5.visible=true
      GameOver.visible=true
-     if (mousePressedOver(F5)||touches.length>0){
+     if (touches.length>0){
        modo="início"
        grupo.destroyEach ()
        F5.visible=false
