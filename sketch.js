@@ -146,13 +146,14 @@ function draw() {
   text (score, 10, 170)
 
   if (modo=="início"){
-      if (keyDown("space")){
+      if (keyDown("space")||touches.lenght>0){
         modo="jogando"
+        touches=[]
       }
     }
      if ("modo==jogando"){
     if (keyDown("space")||touches.length>0){
-
+            
       if (trex.y==374.5){
         trex.velocityY = -12
         pulo.play ()
